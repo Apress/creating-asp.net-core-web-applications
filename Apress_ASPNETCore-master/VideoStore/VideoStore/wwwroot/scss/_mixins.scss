@@ -1,0 +1,8 @@
+﻿
+
+@mixin header-font($family: 'Times New Roman', $weight: 400, $style: normal, $color: black) {
+    font-family: $family, Helvetica, sans-serif;
+    font-style: $style;
+    font-weight: $weight;
+    color: $color;
+}

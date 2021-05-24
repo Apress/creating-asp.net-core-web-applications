@@ -1,0 +1,27 @@
+﻿@using VideoStore.Core
+@model Video
+
+
+<div>
+    Catalog ID: @Model.Id
+</div>
+<div>
+    Release Date: @Model.ReleaseDate.ToString("dd MMMM yyyy")
+</div>
+<div>
+    Genre: @Model.Genre
+</div>
+@*<div>
+        Price: $@Model.Video.Price
+    </div>*@
+<videoPrice video-price="@Model.Price" culture-name="en-GB" label="Price: "></videoPrice>
+<div>
+    Lent Out: @Html.CheckBoxFor(x => x.LentOut)
+</div>
+
+@if (Model.LentOut == true)
+{
+    <div>
+        Lent To: @Model.LentTo
+    </div>
+}

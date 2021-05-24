@@ -1,0 +1,86 @@
+﻿@page
+@model VideoStore.Pages.Videos.ListModel
+@{
+}
+
+<h1>@Model.PageTitle</h1>
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search"
+                   class="form-control"
+                   asp-for="SearchQuery" />
+            <button class="btn btn-group">
+                <i class="fas fa-search"></i>
+            </button>
+            <a asp-page="./Edit" class="btn btn-group">
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
+    </div>
+</form>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            Title
+        </div>
+        <div class="col-md-3">
+            Release Date
+        </div>
+        <div class="col-md-3">
+            Genre
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+    @foreach (var video in Model.Videos)
+    {
+        <div class="row">
+            <div class="col-md-3">
+                @video.Title
+            </div>
+            <div class="col-md-3">
+                @video.ReleaseDate.ToShortDateString()
+            </div>
+            <div class="col-md-3">
+                @video.Genre
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="btn btn-lg" asp-page="./Detail" asp-route-videoId="@video.Id">
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn btn-lg" asp-page="./Edit" asp-route-videoId="@video.Id">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+@section Notification {
+<div class="row">
+    <div class="col-md-12 alert alert-info">
+        This is a notification
+    </div>
+</div>
+}
+
+
+@*@section Scripts {
+    <script>
+        $(document).ready(function () {
+            alert("I am a script alert");
+        });
+    </script>
+}*@

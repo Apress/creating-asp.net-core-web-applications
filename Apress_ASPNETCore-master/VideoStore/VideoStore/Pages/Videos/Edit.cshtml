@@ -1,0 +1,47 @@
+﻿@page "{videoId:int?}"
+@model VideoStore.Pages.Videos.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editing: @Model.Video.Title</h1>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Video.Id" />
+    <div class="form-group">
+        <label asp-for="Video.Title"></label>
+        <input asp-for="Video.Title" class="form-control" />
+        <span class="text-danger" asp-validation-for="Video.Title"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Video.ReleaseDate"></label>
+        <input asp-for="Video.ReleaseDate" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Video.Genre"></label>
+        <select class="form-control" asp-for="Video.Genre"
+                asp-items="Model.Genres">
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Video.Price"></label>
+        <input asp-for="Video.Price" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Video.LentOut"></label>
+        <input asp-for="Video.LentOut" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Video.LentTo"></label>
+        <input asp-for="Video.LentTo" class="form-control" />
+        <span class="text-danger" asp-validation-for="Video.LentTo"></span>
+    </div>
+
+    <button type="submit" class="btn border-primary">Update Video</button>
+</form>

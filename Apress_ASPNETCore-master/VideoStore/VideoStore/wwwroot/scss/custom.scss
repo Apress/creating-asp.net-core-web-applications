@@ -1,0 +1,34 @@
+﻿@import "_variables.scss";
+@import "_mixins.scss";
+@import "_functions.scss";
+
+i.fas.fa-star {
+    color: $star-color;
+}
+
+h1 {
+    @include header-font;
+}
+
+h2 {
+    @include header-font('Arial', 200, normal, red);
+}
+
+.pBorder {
+    border: 2px solid $border-color;
+    padding: padding-calc();
+}
+
+.pBorder-highlight {
+    @extend .pBorder;
+    background-color: $highlight-color;
+    color: $hightlight-text-color;
+}
+
+.featuredH2 {
+    @include header-font('Arial', 300, normal, gold);
+}
+
+
+
+

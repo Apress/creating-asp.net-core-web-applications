@@ -1,0 +1,32 @@
+﻿/* Site Palette*/
+/* Base Padding */
+/* Site Palette*/
+/* Base Padding */
+i.fas.fa-star {
+  color: #DAA520; }
+
+h1 {
+  font-family: "Times New Roman", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: black; }
+
+h2 {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  color: red; }
+
+.pBorder, .pBorder-highlight {
+  border: 2px solid #FF0000;
+  padding: 2px; }
+
+.pBorder-highlight {
+  background-color: #0000FF;
+  color: #ffffff; }
+
+.featuredH2 {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: gold; }

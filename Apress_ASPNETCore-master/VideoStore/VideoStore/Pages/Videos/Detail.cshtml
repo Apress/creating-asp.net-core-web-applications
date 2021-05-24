@@ -1,0 +1,26 @@
+﻿@page "{videoId:int}"
+@model VideoStore.Pages.Videos.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "_LayoutSpecial";
+}
+
+<div class="row">
+    <div class="col-md-12"><h1>@Model.Video.Title</h1></div>    
+</div>
+<div class="row">
+    <div class="col-md-6">
+        @if (Model.CommitMessage != null)
+        {
+            //TempData.Keep("CommitMessage");
+            <div class="alert alert-info">@Model.CommitMessage</div>
+        }
+        <partial name="_VideoDetail" model="Model.Video" />
+    </div>
+    <div class="col-md-6">
+        <partial name="_VideoStats" model="Model.Video" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12"><a asp-page="./List" class="btn btn-outline-primary">Back to Videos</a></div>
+</div>
